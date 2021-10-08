@@ -39,4 +39,7 @@ jobs:
       - name: e2e-test
         uses: ./
         with:
-          name: foo
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          datadog-tags: |
+            repository:${{ github.repository }}
+            github_token:GITHUB_TOKEN
