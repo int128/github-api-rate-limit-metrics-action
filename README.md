@@ -50,5 +50,5 @@ This is an action to send the metrics of [GitHub API rate limit](https://docs.gi
 | Name | Type | Description
 |------|------|------------
 | `github-token` | required | GitHub token
-| `datadog-api-key` | optional | Datadog API key
+| `datadog-api-key` | optional | Datadog API key. If not set, do not send metrics actually
 | `datadog-tags` | optional | Datadog tags in form of multiline of `KEY:VALUE`
