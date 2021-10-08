@@ -3,7 +3,9 @@ import { run } from './run'
 
 const main = async (): Promise<void> => {
   await run({
-    name: core.getInput('name', { required: true }),
+    githubToken: core.getInput('github-token', { required: true }),
+    datadogAPIKey: core.getInput('datadog-api-key') || undefined,
+    datadogTags: core.getMultilineInput('datadog-tags'),
   })
 }
 
