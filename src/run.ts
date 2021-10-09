@@ -24,7 +24,8 @@ export const run = async (inputs: Inputs): Promise<void> => {
     ...inputs.datadogTags,
   ]
 
-  const now = Date.now() / 1000
+  const now = Math.floor(rateLimit.headers.date ? Date.parse(rateLimit.headers.date) : Date.now()) / 1000
+
   const series = calculateMetrics(rateLimit.data.resources, now, tags)
   if (inputs.datadogAPIKey === undefined) {
     core.info(`dry-run: sending ${series.length} series to Datadog: ${JSON.stringify(series, undefined, 2)}`)
