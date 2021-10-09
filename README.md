@@ -1,6 +1,7 @@
 # github-api-rate-limit-metrics-action [![ts](https://github.com/int128/github-api-rate-limit-metrics-action/actions/workflows/ts.yaml/badge.svg)](https://github.com/int128/github-api-rate-limit-metrics-action/actions/workflows/ts.yaml)
 
 This is an action to send the metrics of [GitHub API rate limit](https://docs.github.com/en/rest/reference/rate-limit) to Datadog.
+If you have a large scale monorepo, you may need to monitor the rate limit to improve stability of CI/CD pipeline.
 
 
 ## Metrics
