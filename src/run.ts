@@ -17,8 +17,15 @@ export const run = async (inputs: Inputs): Promise<void> => {
   const rateLimit = await octokit.rest.rateLimit.get()
   core.info(`Got rate limit: ${JSON.stringify(rateLimit, undefined, 2)}`)
 
+  const tags = [
+    `repository_owner:${github.context.repo.owner}`,
+    `repository_name:${github.context.repo.repo}`,
+    `workflow_name:${github.context.workflow}`,
+    ...inputs.datadogTags,
+  ]
+
   const now = Date.now() / 1000
-  const series = calculateMetrics(rateLimit.data.resources, now, inputs.datadogTags)
+  const series = calculateMetrics(rateLimit.data.resources, now, tags)
   if (inputs.datadogAPIKey === undefined) {
     core.info(`dry-run: sending ${series.length} series to Datadog: ${JSON.stringify(series, undefined, 2)}`)
     return
