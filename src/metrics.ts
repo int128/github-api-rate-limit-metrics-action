@@ -9,29 +9,29 @@ export const calculateMetrics = (r: RateLimitResources, now: number, tags: strin
   series.push(
     {
       host: 'github.com',
-      tags,
-      metric: 'github.rate_limit.core.remaining',
+      tags: [...tags, 'resource:core'],
+      metric: 'github.rate_limit.remaining',
       type: 'gauge',
       points: [[now, r.core.remaining]],
     },
     {
       host: 'github.com',
-      tags,
-      metric: 'github.rate_limit.core.limit',
+      tags: [...tags, 'resource:core'],
+      metric: 'github.rate_limit.limit',
       type: 'gauge',
       points: [[now, r.core.limit]],
     },
     {
       host: 'github.com',
-      tags,
-      metric: 'github.rate_limit.search.remaining',
+      tags: [...tags, 'resource:search'],
+      metric: 'github.rate_limit.remaining',
       type: 'gauge',
       points: [[now, r.search.remaining]],
     },
     {
       host: 'github.com',
-      tags,
-      metric: 'github.rate_limit.search.limit',
+      tags: [...tags, 'resource:search'],
+      metric: 'github.rate_limit.limit',
       type: 'gauge',
       points: [[now, r.search.limit]],
     }
@@ -41,15 +41,15 @@ export const calculateMetrics = (r: RateLimitResources, now: number, tags: strin
     series.push(
       {
         host: 'github.com',
-        tags,
-        metric: 'github.rate_limit.graphql.remaining',
+        tags: [...tags, 'resource:graphql'],
+        metric: 'github.rate_limit.remaining',
         type: 'gauge',
         points: [[now, r.graphql.remaining]],
       },
       {
         host: 'github.com',
-        tags,
-        metric: 'github.rate_limit.graphql.limit',
+        tags: [...tags, 'resource:graphql'],
+        metric: 'github.rate_limit.limit',
         type: 'gauge',
         points: [[now, r.graphql.limit]],
       }
