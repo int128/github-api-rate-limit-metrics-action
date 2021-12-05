@@ -94,8 +94,8 @@ Here are some examples.
 
 ## Inputs
 
-| Name | Type | Description
+| Name | Default | Description
 |------|------|------------
-| `github-token` | required | GitHub token
-| `datadog-api-key` | optional | Datadog API key. If not set, do not send metrics actually
-| `datadog-tags` | optional | Datadog tags in form of multiline of `KEY:VALUE`
+| `github-token` | (required) | GitHub token
+| `datadog-api-key` | - | Datadog API key. If not set, do not send metrics actually
+| `datadog-tags` | - | Datadog tags in form of multiline of `KEY:VALUE`
