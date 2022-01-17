@@ -11,5 +11,5 @@ inputs:
     description: Tags to send to Datadog
     required: false
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
