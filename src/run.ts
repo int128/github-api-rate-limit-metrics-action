@@ -32,6 +32,7 @@ export const run = async (inputs: Inputs): Promise<void> => {
     return
   }
 
-  await metrics.submitMetrics({ body: { series } })
+  const result = await metrics.submitMetrics({ body: { series } })
+  console.log(JSON.stringify(result))
   core.info(`Sent ${series.length} series to Datadog`)
 }
