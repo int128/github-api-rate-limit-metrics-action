@@ -1,10 +1,10 @@
-import { Series } from '@datadog/datadog-api-client/dist/packages/datadog-api-client-v1/models/Series'
+import { v1 } from '@datadog/datadog-api-client'
 import { Endpoints } from '@octokit/types'
 
 type RateLimitResources = Endpoints['GET /rate_limit']['response']['data']['resources']
 
-export const calculateMetrics = (r: RateLimitResources, now: number, tags: string[]): Series[] => {
-  const series: Series[] = []
+export const calculateMetrics = (r: RateLimitResources, now: number, tags: string[]): v1.Series[] => {
+  const series: v1.Series[] = []
 
   series.push(
     {
