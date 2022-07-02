@@ -1,4 +1,4 @@
-import { Series } from '@datadog/datadog-api-client/dist/packages/datadog-api-client-v1/models/Series'
+import { v1 } from '@datadog/datadog-api-client'
 import { calculateMetrics } from '../src/metrics'
 
 test('run successfully', () => {
@@ -27,7 +27,7 @@ test('run successfully', () => {
     now,
     []
   )
-  expect(series).toStrictEqual<Series[]>([
+  expect(series).toStrictEqual<v1.Series[]>([
     {
       host: 'github.com',
       tags: ['resource:core'],
