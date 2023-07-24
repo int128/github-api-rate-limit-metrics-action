@@ -85,7 +85,7 @@ Here are some examples.
           github_app_private_key: ${{ secrets.YOUR_APP_PRIVATE_KEY }}
       - uses: int128/github-api-rate-limit-metrics-action@v1
         with:
-          github-token: ${{ steps.octoken.output.token }}
+          github-token: ${{ steps.octoken.outputs.token }}
           datadog-api-key: ${{ secrets.DATADOG_API_KEY }}
           datadog-tags: |
             github_token_name:YOUR_APP
