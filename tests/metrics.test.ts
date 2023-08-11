@@ -25,7 +25,7 @@ test('run successfully', () => {
       },
     },
     now,
-    []
+    [],
   )
   expect(series).toStrictEqual<v1.Series[]>([
     {

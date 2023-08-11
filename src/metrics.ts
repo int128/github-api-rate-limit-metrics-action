@@ -34,7 +34,7 @@ export const calculateMetrics = (r: RateLimitResources, now: number, tags: strin
       metric: 'github.rate_limit.limit',
       type: 'gauge',
       points: [[now, r.search.limit]],
-    }
+    },
   )
 
   if (r.graphql) {
@@ -52,7 +52,7 @@ export const calculateMetrics = (r: RateLimitResources, now: number, tags: strin
         metric: 'github.rate_limit.limit',
         type: 'gauge',
         points: [[now, r.graphql.limit]],
-      }
+      },
     )
   }
 
