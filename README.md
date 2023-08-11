@@ -81,11 +81,11 @@ Here are some examples.
       - uses: cybozu/octoken-action@v1
         id: octoken
         with:
-          github_app_id: ${{ secrets.YOUR_APP_PRIVATE_KEY }}
+          github_app_id: ${{ secrets.YOUR_APP_ID }}
           github_app_private_key: ${{ secrets.YOUR_APP_PRIVATE_KEY }}
       - uses: int128/github-api-rate-limit-metrics-action@v1
         with:
-          github-token: ${{ steps.outputs.octoken.token }}
+          github-token: ${{ steps.octoken.outputs.token }}
           datadog-api-key: ${{ secrets.DATADOG_API_KEY }}
           datadog-tags: |
             github_token_name:YOUR_APP
