@@ -14,6 +14,9 @@ dependencies:
   '@datadog/datadog-api-client':
     specifier: 1.22.0
     version: 1.22.0
+  '@octokit/types':
+    specifier: ^12.6.0
+    version: 12.6.0
 
 devDependencies:
   '@tsconfig/node20':
