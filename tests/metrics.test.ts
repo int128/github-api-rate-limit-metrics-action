@@ -1,5 +1,5 @@
 import { v1 } from '@datadog/datadog-api-client'
-import { calculateMetrics } from '../src/metrics'
+import { calculateMetrics } from '../src/metrics.js'
 
 test('run successfully', () => {
   const now = Date.now() / 1000
