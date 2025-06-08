@@ -1,7 +1,8 @@
+import { it, expect } from 'vitest'
 import { v1 } from '@datadog/datadog-api-client'
 import { calculateMetrics } from '../src/metrics.js'
 
-test('run successfully', () => {
+it('run successfully', () => {
   const now = Date.now() / 1000
   const series = calculateMetrics(
     {
