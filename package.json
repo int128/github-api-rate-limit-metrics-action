@@ -10,7 +10,7 @@
   "dependencies": {
     "@actions/core": "1.11.1",
     "@actions/github": "6.0.1",
-    "@datadog/datadog-api-client": "1.38.0",
+    "@datadog/datadog-api-client": "1.39.0",
     "@octokit/types": "14.1.0"
   },
   "devDependencies": {
