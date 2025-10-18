@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
-import { calculateMetrics } from './metrics.js'
 import { client, v1 } from '@datadog/datadog-api-client'
+import { calculateMetrics } from './metrics.js'
 
 type Inputs = {
   githubToken: string
