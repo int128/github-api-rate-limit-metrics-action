@@ -1,5 +1,5 @@
-import { v1 } from '@datadog/datadog-api-client'
-import { Endpoints } from '@octokit/types'
+import type { v1 } from '@datadog/datadog-api-client'
+import type { Endpoints } from '@octokit/types'
 
 type RateLimitResources = Endpoints['GET /rate_limit']['response']['data']['resources']
 

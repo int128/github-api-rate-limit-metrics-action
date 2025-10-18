@@ -1,5 +1,5 @@
-import { it, expect } from 'vitest'
-import { v1 } from '@datadog/datadog-api-client'
+import type { v1 } from '@datadog/datadog-api-client'
+import { expect, it } from 'vitest'
 import { calculateMetrics } from '../src/metrics.js'
 
 it('run successfully', () => {
