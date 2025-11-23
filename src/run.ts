@@ -1,16 +1,15 @@
 import * as core from '@actions/core'
-import * as github from '@actions/github'
 import { client, v1 } from '@datadog/datadog-api-client'
+import type { Octokit } from '@octokit/action'
+import type { Context } from './github.js'
 import { calculateMetrics } from './metrics.js'
 
 type Inputs = {
-  githubToken: string
   datadogAPIKey?: string
   datadogTags: string[]
 }
 
-export const run = async (inputs: Inputs): Promise<void> => {
-  const octokit = github.getOctokit(inputs.githubToken)
+export const run = async (inputs: Inputs, octokit: Octokit, context: Context): Promise<void> => {
   const configuration = client.createConfiguration({ authMethods: { apiKeyAuth: inputs.datadogAPIKey } })
   const metrics = new v1.MetricsApi(configuration)
 
@@ -18,9 +17,9 @@ export const run = async (inputs: Inputs): Promise<void> => {
   core.info(`Got rate limit: ${JSON.stringify(rateLimit, undefined, 2)}`)
 
   const tags = [
-    `repository_owner:${github.context.repo.owner}`,
-    `repository_name:${github.context.repo.repo}`,
-    `workflow_name:${github.context.workflow}`,
+    `repository_owner:${context.repo.owner}`,
+    `repository_name:${context.repo.repo}`,
+    `workflow_name:${context.workflow}`,
     ...inputs.datadogTags,
   ]
 

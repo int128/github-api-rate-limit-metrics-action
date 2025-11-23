@@ -1,14 +1,15 @@
 {
   "private": true,
   "scripts": {
-    "build": "ncc build --source-map --license licenses.txt src/main.ts",
+    "build": "ncc build --source-map --license licenses.txt src/index.ts",
     "test": "vitest"
   },
   "type": "module",
   "dependencies": {
     "@actions/core": "1.11.1",
-    "@actions/github": "6.0.1",
     "@datadog/datadog-api-client": "1.46.0",
+    "@octokit/action": "^8.0.4",
+    "@octokit/plugin-retry": "^8.0.3",
     "@octokit/types": "16.0.0"
   },
   "devDependencies": {
@@ -16,7 +17,6 @@
     "@tsconfig/node20": "20.1.7",
     "@types/node": "20.19.25",
     "@vercel/ncc": "0.38.4",
-    "js-yaml": "4.1.1",
     "pnpm": "10.22.0",
     "typescript": "5.9.3",
     "vitest": "4.0.9"
