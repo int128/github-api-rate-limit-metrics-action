@@ -8,7 +8,7 @@ const main = async (): Promise<void> => {
       datadogAPIKey: core.getInput('datadog-api-key') || undefined,
       datadogTags: core.getMultilineInput('datadog-tags'),
     },
-    github.getOctokit(),
+    github.getOctokit(core.getInput('github-token', { required: true })),
     await github.getContext(),
   )
 }
