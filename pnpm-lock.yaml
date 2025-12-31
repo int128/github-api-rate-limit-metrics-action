@@ -15,10 +15,10 @@ importers:
         specifier: 1.49.0
         version: 1.49.0
       '@octokit/action':
-        specifier: ^8.0.4
+        specifier: 8.0.4
         version: 8.0.4
       '@octokit/plugin-retry':
-        specifier: ^8.0.3
+        specifier: 8.0.3
         version: 8.0.3(@octokit/core@7.0.6)
       '@octokit/types':
         specifier: 16.0.0
