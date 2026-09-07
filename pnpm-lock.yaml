@@ -21,8 +21,8 @@ importers:
         specifier: 8.1.1
         version: 8.1.1(@octokit/core@7.0.8)
       '@octokit/types':
-        specifier: 16.0.0
-        version: 16.0.0
+        specifier: 18.0.0
+        version: 18.0.0
     devDependencies:
       '@biomejs/biome':
         specifier: 2.3.8
